@@ -28,6 +28,8 @@
 
         const data = new FormData()
         data.append('audio', this.record.blob, `${this.filename}.mp3`)
+        data.append('duration', this.record.duration)
+        data.append('sentence', this.record.sentence)
 
         const headers = Object.assign(this.headers, {})
         headers['Content-Type'] = `multipart/form-data; boundary=${data._boundary}`
